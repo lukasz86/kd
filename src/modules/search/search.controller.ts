@@ -12,7 +12,7 @@ export class SearchController {
   @ApiResponse({
     status: 200,
     description: 'Search results',
-    type: [SerachResult],
+    type: [SearchResult],
   })
   async search(@Query('query') query: string): Promise<SearchResult[]> {
     return this.appService.search(query);
