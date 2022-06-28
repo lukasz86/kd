@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class SerchResult {
+export class SearchResult {
   @ApiProperty({
     example: 'BULLET',
     description: 'Case name',

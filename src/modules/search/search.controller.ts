@@ -2,7 +2,7 @@ import { Controller, Get, Query } from '@nestjs/common';
 import { SearchService } from './services/search.service';
 
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { SerchResult } from './searchResult';
+import { SearchResult } from './searchResult';
 @ApiTags('search')
 @Controller('search')
 export class SearchController {
@@ -12,9 +12,9 @@ export class SearchController {
   @ApiResponse({
     status: 200,
     description: 'Search results',
-    type: [SerchResult],
+    type: [SearchResult],
   })
-  async search(@Query('query') query: string): Promise<SerchResult[]> {
+  async search(@Query('query') query: string): Promise<SearchResult[]> {
     return this.appService.search(query);
   }
 }
